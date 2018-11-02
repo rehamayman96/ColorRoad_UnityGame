@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour {
     private Renderer rend;
     private Color color;
     private float translatez = 5f;
+    private float translatex = 1.0f;
     public Text scoreText;
     private int score = 0;
     private int speedScore = 0;
@@ -35,8 +36,8 @@ public class PlayerController : MonoBehaviour {
         }
         if (!stop && !pause)
         {
-            transform.Translate(Input.GetAxis("Horizontal") * Time.deltaTime * 5, 0.0f, translatez * Time.deltaTime);
-            transform.Translate(Input.acceleration.x * Time.deltaTime, 0.0f, translatez * Time.deltaTime);
+            transform.Translate(Input.GetAxis("Horizontal") * Time.deltaTime * 5* translatex, 0.0f, translatez * Time.deltaTime);
+            transform.Translate(Input.acceleration.x * Time.deltaTime, 0.0f * translatex, translatez * Time.deltaTime);
         }
         else if(stop)
         {
@@ -90,6 +91,7 @@ public class PlayerController : MonoBehaviour {
                 if (speedScore % 50 == 0)
                 {
                     translatez *= 2;
+                    translatex += 0.4f;
                 }
             }
             else
