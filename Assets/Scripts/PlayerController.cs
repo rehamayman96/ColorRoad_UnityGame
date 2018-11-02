@@ -51,18 +51,27 @@ public class PlayerController : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("BlueLight"))
         {
-            rend.sharedMaterial = material[0];
-            sounds[0].Play();
+            if (rend.sharedMaterial.color != material[0].color)
+            {
+                rend.sharedMaterial = material[0];
+                sounds[0].Play();
+            }
         }
         if (other.gameObject.CompareTag("RedLight"))
         {
-            rend.sharedMaterial = material[1];
-            sounds[0].Play();
+            if (rend.sharedMaterial.color != material[1].color)
+            {
+                rend.sharedMaterial = material[1];
+                sounds[0].Play();
+            }
         }
         if (other.gameObject.CompareTag("YellowLight"))
         {
-            rend.sharedMaterial = material[2];
-            sounds[0].Play();
+            if (rend.sharedMaterial.color != material[2].color)
+            {
+                rend.sharedMaterial = material[2];
+                sounds[0].Play();
+            }
         }
     }
 
