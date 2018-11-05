@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour {
         if (!stop && !pause)
         {
             transform.Translate(Input.GetAxis("Horizontal") * Time.deltaTime * 5* translatex, 0.0f, translatez * Time.deltaTime);
-            transform.Translate(Input.acceleration.x * Time.deltaTime, 0.0f * translatex, translatez * Time.deltaTime);
+            transform.Translate(Input.acceleration.x * Time.deltaTime * translatex * 2.0f, 0.0f, translatez * Time.deltaTime);
         }
         else if(stop)
         {
