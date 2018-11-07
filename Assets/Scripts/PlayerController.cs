@@ -83,8 +83,8 @@ public class PlayerController : MonoBehaviour {
             {
                 score += 10;
                 sounds[1].Play();
-                speedScore += 10;
-                if (speedScore % 50 == 0)
+                speedScore += 1;
+                if (speedScore % 5 == 0)
                 {
                     translatez *= 2;
                     translatex += 0.4f;
@@ -95,6 +95,7 @@ public class PlayerController : MonoBehaviour {
                 score = (int)(score / 2);
                 sounds[2].Play();
                 stop = score == 0;
+                speedScore = 0;
             }
             scoreText.text = "Score: " + score + "";
             Destroy(other.gameObject);
@@ -107,8 +108,8 @@ public class PlayerController : MonoBehaviour {
             {
                 score += 10;
                 sounds[1].Play();
-                speedScore += 10;
-                if (speedScore % 50 == 0)
+                speedScore += 1;
+                if (speedScore % 5 == 0)
                 {
                     translatez *= 2;
                 }
@@ -118,6 +119,7 @@ public class PlayerController : MonoBehaviour {
                 score = (int)(score / 2);
                 sounds[2].Play();
                 stop = score == 0;
+                speedScore = 0;
             }
             scoreText.text = "Score: " + score + "";
             Destroy(other.gameObject);
@@ -130,8 +132,8 @@ public class PlayerController : MonoBehaviour {
             {
                 score += 10;
                 sounds[1].Play();
-                speedScore += 10;
-                if (speedScore % 50 == 0)
+                speedScore += 1;
+                if (speedScore % 5 == 0)
                 {
                     translatez *= 2;
                 }
@@ -141,86 +143,12 @@ public class PlayerController : MonoBehaviour {
                 score = (int)(score / 2);
                 sounds[2].Play();
                 stop = score == 0;
+                speedScore = 0;
             }
             scoreText.text = "Score: " + score + "";
             Destroy(other.gameObject);
         }
     }
-
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Blue"))
-    //    {
-    //        Color collColor = collision.gameObject.GetComponent<Renderer>().material.color;
-    //        color = rend.material.color;
-    //        if(color == collColor)
-    //        {
-    //            score += 10;
-    //            sounds[1].Play();
-    //            speedScore += 10;
-    //            if (speedScore % 50 == 0)
-    //            {
-    //                translatez *= 2;
-    //                translatex += 0.4f;
-    //            }
-    //        }
-    //        else
-    //        {
-    //            score = (int)(score / 2);
-    //            sounds[2].Play();
-    //            stop = score == 0;
-    //        }
-    //        scoreText.text = "Score: " + score + "";
-    //        Destroy(collision.gameObject);
-    //    }
-    //    if (collision.gameObject.CompareTag("Red"))
-    //    {
-    //        Color collColor = collision.gameObject.GetComponent<Renderer>().material.color;
-    //        color = rend.material.color;
-    //        if (color == collColor)
-    //        {
-    //            score += 10;
-    //            sounds[1].Play();
-    //            speedScore += 10;
-    //            if (speedScore % 50 == 0)
-    //            {
-    //                translatez *= 2;
-    //            }
-    //        }
-    //        else
-    //        {
-    //            score = (int)(score / 2);
-    //            sounds[2].Play();
-    //            stop = score == 0;
-    //        }
-    //        scoreText.text = "Score: " + score + "";
-    //        Destroy(collision.gameObject);
-    //    }
-    //    if (collision.gameObject.CompareTag("Yellow"))
-    //    {
-    //        Color collColor = collision.gameObject.GetComponent<Renderer>().material.color;
-    //        color = rend.material.color;
-    //        if (color == collColor)
-    //        {
-    //            score += 10;
-    //            sounds[1].Play();
-    //            speedScore += 10;
-    //            if (speedScore % 50 == 0)
-    //            {
-    //                translatez *= 2;
-    //            }
-    //        }
-    //        else
-    //        {
-    //            score = (int)(score / 2);
-    //            sounds[2].Play();
-    //            stop = score == 0;
-    //        }
-    //        scoreText.text = "Score: " + score + "";
-    //        Destroy(collision.gameObject);
-    //    }
-    //}
 
     public void Pause()
     {
